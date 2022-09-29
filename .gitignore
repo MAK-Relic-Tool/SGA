@@ -10,6 +10,7 @@ __pycache__/
 
 # Ignore setup.py stuff
 src/**/*.egg-info/*
+**/*.egg-info/**
 dist/*
 
 
