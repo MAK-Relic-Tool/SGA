@@ -15,22 +15,14 @@ A collection of libraries for reading & writing Relic's SGA archive files.
 
 ## Installation (Pip)
 ### Installing from PyPI (Recommended)
-#### All-In-One
 ```
-pip install relic-tool-sga[all]
+pip install relic-tool-sga
 ```
-or
-```
-pip install relic-tool-sga[core,v2]
-```
-#### SGA-Core Only
-```
-pip install relic-tool-sga[core]
-```
-#### SGA-V2 Only
-```
-pip install relic-tool-sga[v2]
-```
+Which will install
+- [SGA Core](https://github.com/MAK-Relic-Tool/SGA-Core) (Required for other plugins to work)
+- [SGA V2](https://github.com/MAK-Relic-Tool/SGA-V2) (Dawn of War I / Impossible Creatures)
+
+
 ### Installing from GitHub
 Relic-Tool-SGA only installs pip libraries, and generally shouldn't be installed via GitHub.
 
