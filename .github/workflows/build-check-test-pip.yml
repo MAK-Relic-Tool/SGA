@@ -34,6 +34,11 @@ jobs:
       run: |
         python -m pip install wheel setuptools
 
+    - name: Debug Versions
+      run: |
+        python -m pip -V
+        python -m pip list
+
     - name: Build & Install Repo
       run: |
         python -m pip install .
