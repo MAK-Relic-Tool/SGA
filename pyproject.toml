@@ -20,9 +20,9 @@ requires-python = ">=3.9"
 version = "2.0.0"
 
 [project.optional-dependencies]
-all = ["relic-tool-sga-core >= 2.0.1", "relic-tool-sga-core >= 2.1.0"]  # Until PEP 771, our deps are weird;
+all = ["relic-tool-sga-core >= 2.0.1", "relic-tool-sga-v2 >= 2.1.0"]  # Until PEP 771, our deps are weird;
 core = ["relic-tool-sga-core >= 2.0.1"]  # Until PEP 771, our deps are weird;
-v2 = ["relic-tool-sga-core >= 2.1.0"]
+v2 = ["relic-tool-sga-v2 >= 2.1.0"]
 
 [project.readme]
 content-type = "text/markdown"
