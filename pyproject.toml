@@ -24,7 +24,7 @@ version = "2.0.0"
 
 [project.optional-dependencies]
 # Until PEP 771, our deps are weird
-v2 = [
+"v2" = [
   "relic-tool-sga-v2"
 ]
 
