@@ -22,6 +22,17 @@ name = "relic-tool-sga"
 requires-python = ">=3.9"
 version = "2.0.0"
 
+[project.optional-dependencies]
+# Until PEP 771, our deps are weird
+all = [
+  "relic-tool-sga[v2]"
+]
+core = [
+]
+v2 = [
+  "relic-tool-sga-v2"
+]
+
 [project.readme]
 content-type = "text/markdown"
 file = "README.md"
