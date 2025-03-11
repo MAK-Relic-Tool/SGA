@@ -1,14 +1,7 @@
 name: Build Check Last Pip Working
 
 on:
-  workflow_call:
-    inputs:
-      setup-path:
-        type: string
-        default: .
-      repository:
-        type: string
-        default: ${{ github.repository }}
+  workflow_dispatch:
 
 jobs:
   build-check:
@@ -26,7 +19,6 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
       with:
-        repository: ${{ inputs.repository }}
         persist-credentials: false
 
     - name: Setup Python ${{ matrix.python-version }}
@@ -36,7 +28,7 @@ jobs:
 
     - name: Upgrade Pip
       run: |
-        python -m pip install --upgrade pip==${{ matrix.pip-version }}
+        python -m pip install pip==${{ matrix.pip-version }}
 
     - name: Install Tools (Wheel, Setuptools)
       run: |
@@ -44,4 +36,4 @@ jobs:
 
     - name: Build & Install Repo
       run: |
-        python -m pip install ${{ inputs.setup-path }}
+        python -m pip install .
