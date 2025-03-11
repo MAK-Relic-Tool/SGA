@@ -20,7 +20,7 @@ dependencies = [
 description = "A collection of libraries for reading & writing Relic's SGA archive files."
 name = "relic-tool-sga"
 requires-python = ">=3.9"
-version = "2.0.0"
+version = "2.0.1"
 
 [project.readme]
 content-type = "text/markdown"
