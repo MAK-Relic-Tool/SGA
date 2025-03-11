@@ -1,16 +1,11 @@
-name: Upload to PyPI
+name: Upload to Test PyPI
 
 on:
   workflow_dispatch:
 
-  release:
-    types: [published]
-
-
-
 jobs:
-  pypi-publish:
-    name: Publish To PyPI
+  test-pypi-publish:
+    name: Publish To Test PyPI
 
     runs-on: ubuntu-latest
 
@@ -18,8 +13,8 @@ jobs:
       id-token: write
 
     environment:
-      name: ${{ 'pypi' }}
-      url: https://pypi.org/p/${{ 'relic-tool-sga' }}
+      name: ${{ 'testpypi' }}
+      url: https://test.pypi.org/p/${{ 'relic-tool-sga' }}
 
 
     steps:
@@ -45,5 +40,7 @@ jobs:
     - name: Build Repo
       run: python -m build ${{ '.' }}
 
-    - name: Upload to PyPI
+    - name: Upload to Test PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        repository-url: https://test.pypi.org/legacy/

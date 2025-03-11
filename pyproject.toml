@@ -1,6 +1,62 @@
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
 build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.2"]
+
+[project]
+authors = [{name = "Marcus Kertesz"}]
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+]
+dependencies = ["relic-tool-sga-core >= 2.0.1"]  # Until PEP 771, our deps are weird
+description = "A collection of libraries for reading & writing Relic's SGA archive files."
+name = "relic-tool-sga"
+requires-python = ">=3.9"
+version = "2.0.0"
+
+[project.optional-dependencies]
+all = ["relic-tool-sga-core >= 2.0.1", "relic-tool-sga-core >= 2.1.0"]  # Until PEP 771, our deps are weird;
+core = ["relic-tool-sga-core >= 2.0.1"]  # Until PEP 771, our deps are weird;
+v2 = ["relic-tool-sga-core >= 2.1.0"]
+
+[project.readme]
+content-type = "text/markdown"
+file = "README.md"
+
+[project.urls]
+"Bug Tracker" = "https://github.com/MAK-Relic-Tool/Issue-Tracker/issues"
+Homepage = "https://github.com/MAK-Relic-Tool/Relic-Tool-SGA"
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+# ignore_missing_imports = False ;Moved to module_level ignores
+mypy_path = "$MYPY_CONFIG_FILE_DIR"
+no_implicit_optional = true
+no_implicit_reexport = true
+strict_concatenate = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+# strict = True
+# Manually specify strict flags
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+ignore_errors = true
+ignore_missing_imports = true
+module = ["tests.*"]
+
+[tool.setuptools]
+include-package-data = false
